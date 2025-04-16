@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>招聘系统原型</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .phone-container {
+            width: 375px;
+            height: 812px;
+            border: 12px solid #111;
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            margin: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background-color: #111;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 100;
+        }
+        
+        .status-bar {
+            height: 44px;
+            background: #f7f7f7;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 16px;
+            align-items: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .desktop-container {
+            width: 1200px;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .desktop-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            overflow-y: auto;
+        }
+        
+        .browser-header {
+            height: 40px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0 10px 20px;
+            color: #333;
+            border-bottom: 2px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">招聘系统原型设计</h1>
+    
+    <!-- 个人端 - 移动设备界面 -->
+    <div class="section-title">个人用户移动端</div>
+    <div class="flex flex-wrap justify-center">
+        <!-- 首页/职位列表 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 顶部搜索栏 -->
+                <div class="bg-blue-500 p-4">
+                    <div class="flex items-center bg-white rounded-full p-2 shadow-md">
+                        <i class="fas fa-search text-gray-400 mx-2"></i>
+                        <input type="text" placeholder="搜索职位、公司" class="flex-1 outline-none text-sm">
+                        <i class="fas fa-microphone text-gray-400 mx-2"></i>
+                    </div>
+                    <div class="flex justify-between mt-3 text-white">
+                        <div class="text-center">
+                            <p class="text-sm">上海市</p>
+                            <p class="text-xs">位置</p>
+                        </div>
+                        <div class="h-6 w-px bg-white/50"></div>
+                        <div class="text-center">
+                            <p class="text-sm">不限</p>
+                            <p class="text-xs">经验</p>
+                        </div>
+                        <div class="h-6 w-px bg-white/50"></div>
+                        <div class="text-center">
+                            <p class="text-sm">不限</p>
+                            <p class="text-xs">薪资</p>
+                        </div>
+                        <div class="h-6 w-px bg-white/50"></div>
+                        <div class="text-center">
+                            <p class="text-sm">更多</p>
+                            <p class="text-xs">筛选</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 智能推荐 -->
+                <div class="p-3 bg-white mb-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-medium">为您推荐</h3>
+                        <span class="text-blue-500 text-xs">更多 <i class="fas fa-chevron-right text-xs"></i></span>
+                    </div>
+                    <div class="flex overflow-x-auto pb-2 -mx-3 px-3">
+                        <div class="flex-shrink-0 w-64 border rounded-lg p-3 mr-3">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold">前端开发工程师</h4>
+                                <span class="text-red-500 font-medium">15-25K</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1">阿里巴巴科技有限公司</p>
+                            <div class="flex mt-2 text-xs">
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2">3-5年</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2">本科</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded">上海</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <div class="flex items-center">
+                                    <img src="https://source.unsplash.com/random/40x40/?avatar" class="w-6 h-6 rounded-full">
+                                    <span class="text-xs text-gray-600 ml-1">王先生 · HR</span>
+                                </div>
+                                <button class="bg-blue-500 text-white text-xs px-2 py-1 rounded">立即投递</button>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-64 border rounded-lg p-3">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold">产品经理</h4>
+                                <span class="text-red-500 font-medium">20-30K</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1">腾讯科技有限公司</p>
+                            <div class="flex mt-2 text-xs">
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2">5-10年</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2">硕士</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded">上海</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <div class="flex items-center">
+                                    <img src="https://source.unsplash.com/random/40x40/?woman" class="w-6 h-6 rounded-full">
+                                    <span class="text-xs text-gray-600 ml-1">张女士 · HR</span>
+                                </div>
+                                <button class="bg-blue-500 text-white text-xs px-2 py-1 rounded">立即投递</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 附近职位 -->
+                <div class="p-3 mb-2 bg-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-medium">附近职位</h3>
+                        <span class="text-blue-500 text-xs">更多 <i class="fas fa-chevron-right text-xs"></i></span>
+                    </div>
+                    <div class="flex items-center justify-between border-b pb-3">
+                        <div>
+                            <h4 class="font-medium">UI设计师</h4>
+                            <div class="flex text-xs mt-1">
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2">1-3年</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded">本科</span>
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <img src="https://source.unsplash.com/random/40x40/?company" class="w-4 h-4 rounded-full">
+                                <span class="text-xs text-gray-600 ml-1">字节跳动 · 徐汇区 · 2.1km</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-red-500 font-medium">12-18K</p>
+                            <button class="bg-blue-500 text-white text-xs px-2 py-1 rounded mt-4">投递</button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between border-b py-3">
+                        <div>
+                            <h4 class="font-medium">Java后端开发</h4>
+                            <div class="flex text-xs mt-1">
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2">3-5年</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded">本科</span>
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <img src="https://source.unsplash.com/random/40x40/?logo" class="w-4 h-4 rounded-full">
+                                <span class="text-xs text-gray-600 ml-1">百度 · 浦东新区 · 3.5km</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-red-500 font-medium">25-35K</p>
+                            <button class="bg-blue-500 text-white text-xs px-2 py-1 rounded mt-4">投递</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 招聘会信息 -->
+                <div class="p-3 bg-white mb-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-medium">招聘会预告</h3>
+                        <span class="text-blue-500 text-xs">全部 <i class="fas fa-chevron-right text-xs"></i></span>
+                    </div>
+                    <div class="border rounded-lg overflow-hidden">
+                        <img src="https://source.unsplash.com/random/600x200/?career,conference" class="w-full h-32 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-bold">2023上海IT互联网专场招聘会</h4>
+                            <div class="flex items-center text-gray-600 text-xs mt-2">
+                                <i class="far fa-calendar-alt mr-1"></i>
+                                <span>2023年8月15日 9:00-16:00</span>
+                            </div>
+                            <div class="flex items-center text-gray-600 text-xs mt-1">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>上海展览中心</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-xs text-gray-500">参展企业: 150+</span>
+                                <button class="bg-blue-500 text-white text-xs px-3 py-1 rounded">报名参加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 底部导航 -->
+                <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
+                    <div class="text-center text-blue-500">
+                        <i class="fas fa-home text-xl"></i>
+                        <p class="text-xs mt-1">首页</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-briefcase text-xl"></i>
+                        <p class="text-xs mt-1">职位</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-bell text-xl"></i>
+                        <p class="text-xs mt-1">消息</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-user text-xl"></i>
+                        <p class="text-xs mt-1">我的</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 职位详情 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 头部导航 -->
+                <div class="bg-white p-4 flex items-center sticky top-0 border-b z-10">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                    <h2 class="text-lg font-bold mx-auto">职位详情</h2>
+                    <i class="fas fa-share-alt text-gray-600"></i>
+                </div>
+                
+                <!-- 职位信息 -->
+                <div class="p-4 bg-white">
+                    <h3 class="text-xl font-bold">前端开发工程师</h3>
+                    <p class="text-red-500 font-medium text-lg mt-1">15K-25K · 13薪</p>
+                    <div class="flex mt-2 flex-wrap">
+                        <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2 mb-2 text-sm">上海</span>
+                        <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2 mb-2 text-sm">3-5年</span>
+                        <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mr-2 mb-2 text-sm">本科及以上</span>
+                        <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded mb-2 text-sm">全职</span>
+                    </div>
+                </div>
+                
+                <!-- 公司信息 -->
+                <div class="p-4 bg-white mt-2 flex">
+                    <img src="https://source.unsplash.com/random/100x100/?company,logo" class="w-16 h-16 rounded mr-3">
+                    <div>
+                        <h4 class="font-bold">阿里巴巴科技有限公司</h4>
+                        <div class="flex items-center text-gray-600 text-sm mt-1">
+                            <span>互联网</span>
+                            <span class="mx-2">|</span>
+                            <span>上市公司</span>
+                            <span class="mx-2">|</span>
+                            <span>10000人以上</span>
+                        </div>
+                        <div class="mt-1 flex items-center">
+                            <i class="fas fa-map-marker-alt text-gray-400 text-xs mr-1"></i>
+                            <span class="text-gray-600 text-xs">上海市浦东新区张江高科技园区</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 职位描述 -->
+                <div class="p-4 bg-white mt-2">
+                    <h4 class="font-bold border-l-4 border-blue-500 pl-2">职位描述</h4>
+                    <div class="mt-3 text-gray-700 text-sm leading-relaxed">
+                        <p class="mb-2">岗位职责：</p>
+                        <p class="mb-1">1. 负责公司产品的前端开发工作，实现产品UI和交互方面的开发需求；</p>
+                        <p class="mb-1">2. 负责前端架构的优化，提升用户体验和页面性能；</p>
+                        <p class="mb-1">3. 配合后端开发人员完成数据对接，保证项目开发和维护质量；</p>
+                        <p class="mb-1">4. 负责前端开发文档的编写和维护。</p>
+                        
+                        <p class="mt-3 mb-2">任职要求：</p>
+                        <p class="mb-1">1. 本科及以上学历，计算机相关专业；</p>
+                        <p class="mb-1">2. 3年以上前端开发经验，熟悉HTML5, CSS3, JavaScript；</p>
+                        <p class="mb-1">3. 精通React、Vue等前端框架，有大型项目开发经验；</p>
+                        <p class="mb-1">4. 熟悉前端工程化工具，如Webpack, Babel等；</p>
+                        <p class="mb-1">5. 良好的沟通能力和团队协作精神，有责任心。</p>
+                    </div>
+                </div>
+                
+                <!-- 工作地点 -->
+                <div class="p-4 bg-white mt-2">
+                    <h4 class="font-bold border-l-4 border-blue-500 pl-2">工作地点</h4>
+                    <div class="mt-3 flex items-center">
+                        <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+                        <span class="text-gray-700">上海市浦东新区张江高科技园区海趣路36号</span>
+                    </div>
+                    <div class="mt-2 h-40 bg-gray-200 rounded">
+                        <img src="https://source.unsplash.com/random/600x400/?map,shanghai" class="w-full h-full object-cover rounded">
+                    </div>
+                </div>
+                
+                <!-- 面试评价 -->
+                <div class="p-4 bg-white mt-2 mb-20">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold border-l-4 border-blue-500 pl-2">面试评价</h4>
+                        <span class="text-blue-500 text-sm">全部 12 条</span>
+                    </div>
+                    <div class="mt-3 border-b pb-3">
+                        <div class="flex items-center">
+                            <img src="https://source.unsplash.com/random/100x100/?avatar" class="w-8 h-8 rounded-full mr-2">
+                            <div>
+                                <p class="text-gray-700 text-sm font-medium">用户123***456</p>
+                                <div class="flex text-yellow-400 mt-1">
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="far fa-star text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">面试难度适中，主要问了前端框架和性能优化相关的问题，面试官很专业，整体体验不错。</p>
+                    </div>
+                    <div class="mt-3">
+                        <div class="flex items-center">
+                            <img src="https://source.unsplash.com/random/100x100/?profile" class="w-8 h-8 rounded-full mr-2">
+                            <div>
+                                <p class="text-gray-700 text-sm font-medium">用户987***654</p>
+                                <div class="flex text-yellow-400 mt-1">
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">三轮面试，技术面+HR面，整体流程规范，反馈及时。技术面侧重基础知识和实战经验。</p>
+                    </div>
+                </div>
+                
+                <!-- 底部栏 -->
+                <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-3 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <button class="border border-gray-300 rounded p-2 mr-2">
+                            <i class="far fa-star text-gray-500"></i>
+                        </button>
+                        <div class="flex flex-col items-center mr-3">
+                            <img src="https://source.unsplash.com/random/40x40/?avatar" class="w-10 h-10 rounded-full border-2 border-white">
+                            <span class="text-xs text-gray-600 mt-1">王先生 · HR</span>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <button class="bg-blue-100 text-blue-500 font-medium py-2 px-4 rounded-full mr-2">
+                            立即沟通
+                        </button>
+                        <button class="bg-blue-500 text-white font-medium py-2 px-4 rounded-full">
+                            投递简历
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 个人信息填写 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 头部导航 -->
+                <div class="bg-white p-4 flex items-center sticky top-0 border-b z-10">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                    <h2 class="text-lg font-bold mx-auto">个人信息</h2>
+                    <i class="fas fa-ellipsis-v text-gray-600"></i>
+                </div>
+                
+                <!-- 表单 -->
+                <div class="p-4 bg-white">
+                    <div class="flex flex-col items-center mb-6">
+                        <div class="relative">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait" class="w-20 h-20 rounded-full object-cover">
+                            <div class="absolute bottom-0 right-0 bg-blue-500 rounded-full p-1">
+                                <i class="fas fa-camera text-white text-xs"></i>
+                            </div>
+                        </div>
+                        <p class="text-blue-500 mt-2 text-sm">上传头像</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">姓名</label>
+                        <input type="text" placeholder="请输入真实姓名" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">性别</label>
+                        <div class="flex">
+                            <div class="border rounded-lg px-4 py-2 mr-2 text-center flex-1 bg-blue-50 border-blue-500 text-blue-500">男</div>
+                            <div class="border rounded-lg px-4 py-2 text-center flex-1 text-gray-600">女</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">出生日期</label>
+                        <div class="relative">
+                            <input type="text" placeholder="请选择出生日期" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                            <i class="fas fa-calendar-alt absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">最高学历</label>
+                        <div class="relative">
+                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                <option>请选择最高学历</option>
+                                <option>高中</option>
+                                <option>大专</option>
+                                <option>本科</option>
+                                <option>硕士</option>
+                                <option>博士</option>
+                            </select>
+                            <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">手机号码</label>
+                        <input type="tel" placeholder="请输入手机号码" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">邮箱</label>
+                        <input type="email" placeholder="请输入邮箱地址" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">期望职位</label>
+                        <input type="text" placeholder="请输入期望职位" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">工作经验</label>
+                        <div class="relative">
+                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                <option>请选择工作经验</option>
+                                <option>应届毕业生</option>
+                                <option>1-3年</option>
+                                <option>3-5年</option>
+                                <option>5-10年</option>
+                                <option>10年以上</option>
+                            </select>
+                            <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">期望薪资</label>
+                        <div class="flex items-center">
+                            <input type="text" placeholder="最低薪资" class="w-1/2 border rounded-lg px-3 py-2 outline-none focus:border-blue-500 mr-2">
+                            <span class="text-gray-500">-</span>
+                            <input type="text" placeholder="最高薪资" class="w-1/2 border rounded-lg px-3 py-2 outline-none focus:border-blue-500 ml-2">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">上传简历</label>
+                        <div class="border border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center">
+                            <i class="fas fa-file-upload text-blue-500 text-3xl mb-2"></i>
+                            <p class="text-gray-500 text-sm">点击上传简历文件</p>
+                            <p class="text-gray-400 text-xs mt-1">支持PDF、Word格式，不超过10MB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">个人介绍</label>
+                        <textarea placeholder="请简要介绍自己的情况和能力特长" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                    </div>
+                    
+                    <button class="bg-blue-500 text-white font-bold py-3 px-4 rounded-lg w-full mt-4">
+                        保存信息
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 实名认证 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 头部导航 -->
+                <div class="bg-white p-4 flex items-center sticky top-0 border-b z-10">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                    <h2 class="text-lg font-bold mx-auto">实名认证</h2>
+                    <div class="w-5"></div>
+                </div>
+                
+                <!-- 认证流程 -->
+                <div class="p-4 bg-white">
+                    <div class="flex justify-between items-center mb-6 relative">
+                        <div class="z-10 flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">1</div>
+                            <span class="text-xs mt-1 text-blue-500">填写信息</span>
+                        </div>
+                        <div class="z-10 flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">2</div>
+                            <span class="text-xs mt-1 text-blue-500">上传证件</span>
+                        </div>
+                        <div class="z-10 flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold">3</div>
+                            <span class="text-xs mt-1 text-gray-500">认证完成</span>
+                        </div>
+                        <div class="absolute h-1 bg-gray-200 left-0 right-0 top-4 -z-10"></div>
+                        <div class="absolute h-1 bg-blue-500 left-0 w-2/3 top-4 -z-5"></div>
+                    </div>
+                    
+                    <!-- 上传证件照 -->
+                    <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                        <p class="text-sm text-blue-700">请上传真实有效的身份证件，确保信息准确无误，系统将对您的信息进行严格保密。</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-3">身份证正面</label>
+                        <div class="border border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center h-40">
+                            <i class="fas fa-id-card text-blue-500 text-3xl mb-2"></i>
+                            <p class="text-gray-500 text-sm">点击上传身份证正面照片</p>
+                            <p class="text-gray-400 text-xs mt-1">请确保图片清晰可见</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-3">身份证反面</label>
+                        <div class="border border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center h-40">
+                            <i class="fas fa-id-card text-blue-500 text-3xl mb-2"></i>
+                            <p class="text-gray-500 text-sm">点击上传身份证反面照片</p>
+                            <p class="text-gray-400 text-xs mt-1">请确保图片清晰可见</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-3">手持身份证照片</label>
+                        <div class="border border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center h-40">
+                            <i class="fas fa-camera text-blue-500 text-3xl mb-2"></i>
+                            <p class="text-gray-500 text-sm">点击上传手持身份证照片</p>
+                            <p class="text-gray-400 text-xs mt-1">请确保面部和证件同时清晰可见</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="agreement" class="w-4 h-4 text-blue-500">
+                        <label for="agreement" class="text-sm text-gray-700 ml-2">我已阅读并同意<span class="text-blue-500">《用户隐私协议》</span>和<span class="text-blue-500">《实名认证服务条款》</span></label>
+                    </div>
+                    
+                    <button class="bg-blue-500 text-white font-bold py-3 px-4 rounded-lg w-full mt-4">
+                        提交认证
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 消息列表 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 头部 -->
+                <div class="bg-white p-4">
+                    <h2 class="text-lg font-bold text-center">消息</h2>
+                </div>
+                
+                <!-- 消息分类 -->
+                <div class="bg-white flex border-b">
+                    <div class="flex-1 text-center py-3 text-blue-500 border-b-2 border-blue-500 font-medium">
+                        互动消息
+                    </div>
+                    <div class="flex-1 text-center py-3 text-gray-500">
+                        系统通知
+                    </div>
+                </div>
+                
+                <!-- 消息列表 -->
+                <div class="bg-white">
+                    <!-- 求职进展 -->
+                    <div class="border-b flex p-4">
+                        <div class="mr-3 relative">
+                            <img src="https://source.unsplash.com/random/100x100/?company,logo" class="w-12 h-12 rounded-lg">
+                            <span class="absolute -right-1 -top-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">2</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold">阿里巴巴科技有限公司</h4>
+                                <span class="text-gray-400 text-xs">10:30</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1 line-clamp-1">您的简历已通过初筛，请准备参加面试...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 简历被查看 -->
+                    <div class="border-b flex p-4">
+                        <div class="mr-3">
+                            <img src="https://source.unsplash.com/random/100x100/?company,tech" class="w-12 h-12 rounded-lg">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold">腾讯科技有限公司</h4>
+                                <span class="text-gray-400 text-xs">昨天</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1 line-clamp-1">HR想查看您的简历，是否同意？</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 面试邀请 -->
+                    <div class="border-b flex p-4">
+                        <div class="mr-3">
+                            <img src="https://source.unsplash.com/random/100x100/?company,internet" class="w-12 h-12 rounded-lg">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold">百度科技有限公司</h4>
+                                <span class="text-gray-400 text-xs">前天</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1 line-clamp-1">我们对您的简历很感兴趣，想邀请您参加线上面试，请回复确认时间。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 招聘会通知 -->
+                    <div class="border-b flex p-4">
+                        <div class="mr-3 bg-blue-100 rounded-lg w-12 h-12 flex items-center justify-center">
+                            <i class="fas fa-calendar-check text-blue-500 text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold">招聘会通知</h4>
+                                <span class="text-gray-400 text-xs">3天前</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1 line-clamp-1">您报名的"2023上海IT互联网专场招聘会"将于8月15日举行，请准时参加。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 系统消息 -->
+                    <div class="border-b flex p-4">
+                        <div class="mr-3 bg-gray-100 rounded-lg w-12 h-12 flex items-center justify-center">
+                            <i class="fas fa-bell text-gray-500 text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold">系统消息</h4>
+                                <span class="text-gray-400 text-xs">4天前</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-1 line-clamp-1">您的账号已完成实名认证，现在可以享受更多求职功能。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 底部导航 -->
+                <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-home text-xl"></i>
+                        <p class="text-xs mt-1">首页</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-briefcase text-xl"></i>
+                        <p class="text-xs mt-1">职位</p>
+                    </div>
+                    <div class="text-center text-blue-500">
+                        <i class="fas fa-bell text-xl"></i>
+                        <p class="text-xs mt-1">消息</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-user text-xl"></i>
+                        <p class="text-xs mt-1">我的</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 我的页面 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 个人信息 -->
+                <div class="bg-blue-500 p-4">
+                    <div class="flex items-center">
+                        <img src="https://source.unsplash.com/random/100x100/?portrait" class="w-16 h-16 rounded-full border-2 border-white">
+                        <div class="ml-3 text-white">
+                            <h3 class="font-bold text-lg">张三</h3>
+                            <p class="text-sm opacity-90">前端开发工程师 · 3年经验</p>
+                            <div class="mt-1 bg-blue-600 px-2 py-1 rounded-full text-xs inline-block">
+                                <i class="fas fa-check-circle mr-1"></i>已认证
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 求职状态 -->
+                <div class="bg-white p-4 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-medium">当前求职状态</h4>
+                        <p class="text-blue-500 text-sm mt-1">随时到岗</p>
+                    </div>
+                    <button class="text-blue-500 border border-blue-500 px-3 py-1 rounded-full text-sm">
+                        修改
+                    </button>
+                </div>
+                
+                <!-- 求职统计 -->
+                <div class="bg-white mt-2 p-4">
+                    <h4 class="font-medium mb-3">求职统计</h4>
+                    <div class="flex justify-between text-center">
+                        <div class="flex-1">
+                            <p class="text-xl font-bold text-blue-500">8</p>
+                            <p class="text-sm text-gray-500 mt-1">已投简历</p>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-xl font-bold text-blue-500">3</p>
+                            <p class="text-sm text-gray-500 mt-1">待面试</p>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-xl font-bold text-blue-500">12</p>
+                            <p class="text-sm text-gray-500 mt-1">感兴趣</p>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-xl font-bold text-blue-500">5</p>
+                            <p class="text-sm text-gray-500 mt-1">已查看</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 我的简历 -->
+                <div class="bg-white mt-2 p-4">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-medium">我的简历</h4>
+                        <button class="text-blue-500 text-sm">管理</button>
+                    </div>
+                    <div class="flex mt-3 border rounded-lg p-3">
+                        <div class="mr-3 bg-blue-50 rounded p-2">
+                            <i class="far fa-file-alt text-blue-500 text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between">
+                                <h5 class="font-medium">个人简历.pdf</h5>
+                                <span class="text-blue-500 text-xs">预览</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">上传于 2023-07-20 · 完善度90%</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mt-2">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 功能列表 -->
+                <div class="bg-white mt-2">
+                    <div class="flex items-center justify-between p-4 border-b">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-star text-blue-500"></i>
+                            </div>
+                            <span>收藏的职位</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-4 border-b">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-history text-green-500"></i>
+                            </div>
+                            <span>投递记录</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-4 border-b">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-calendar-alt text-purple-500"></i>
+                            </div>
+                            <span>招聘会</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-cog text-orange-500"></i>
+                            </div>
+                            <span>设置</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- 底部导航 -->
+                <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-home text-xl"></i>
+                        <p class="text-xs mt-1">首页</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-briefcase text-xl"></i>
+                        <p class="text-xs mt-1">职位</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-bell text-xl"></i>
+                        <p class="text-xs mt-1">消息</p>
+                    </div>
+                    <div class="text-center text-blue-500">
+                        <i class="fas fa-user text-xl"></i>
+                        <p class="text-xs mt-1">我的</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 企业端 - PC界面 -->
+    <div class="section-title">企业端PC界面</div>
+    <div class="flex flex-wrap justify-center">
+        <!-- 企业登录/注册 -->
+        <div class="desktop-container">
+            <div class="browser-header">
+                <div class="dot bg-red-500"></div>
+                <div class="dot bg-yellow-500"></div>
+                <div class="dot bg-green-500"></div>
+            </div>
+            <div class="desktop-screen">
+                <div class="min-h-screen flex">
+                    <div class="w-1/2 bg-blue-600 p-10 text-white flex flex-col justify-center items-center">
+                        <img src="https://source.unsplash.com/random/600x400/?office,work" class="w-3/4 rounded-lg shadow-lg mb-10">
+                        <h1 class="text-3xl font-bold mb-4">寻找最优秀的人才</h1>
+                        <p class="text-xl opacity-80">连接企业与求职者的桥梁，助力企业招贤纳士</p>
+                    </div>
+                    <div class="w-1/2 bg-white p-10 flex flex-col justify-center">
+                        <div class="max-w-md mx-auto w-full">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-6">企业登录</h2>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2">企业邮箱</label>
+                                <input type="email" placeholder="请输入企业邮箱" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2">密码</label>
+                                <input type="password" placeholder="请输入密码" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="remember" class="w-4 h-4 text-blue-500">
+                                    <label for="remember" class="text-sm text-gray-700 ml-2">记住密码</label>
+                                </div>
+                                <a href="#" class="text-sm text-blue-500">忘记密码?</a>
+                            </div>
+                            
+                            <button class="bg-blue-500 text-white font-bold py-3 px-4 rounded-lg w-full mb-4">
+                                登录
+                            </button>
+                            
+                            <p class="text-center text-gray-600 text-sm">
+                                还没有账号? <a href="#" class="text-blue-500">企业注册</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 企业主页/岗位管理 -->
+        <div class="desktop-container">
+            <div class="browser-header">
+                <div class="dot bg-red-500"></div>
+                <div class="dot bg-yellow-500"></div>
+                <div class="dot bg-green-500"></div>
+            </div>
+            <div class="desktop-screen">
+                <div class="flex h-full">
+                    <!-- 侧边栏 -->
+                    <div class="w-64 bg-gray-800 text-white h-full flex flex-col">
+                        <div class="p-4 border-b border-gray-700 flex items-center">
+                            <img src="https://source.unsplash.com/random/100x100/?company,logo" class="w-10 h-10 rounded mr-3">
+                            <div>
+                                <h3 class="font-bold">阿里巴巴</h3>
+                                <p class="text-xs text-gray-400">企业版</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1 overflow-y-auto">
+                            <div class="p-4 bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-tachometer-alt mr-3"></i>
+                                    <span>控制台</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-briefcase mr-3"></i>
+                                    <span>职位管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-3"></i>
+                                    <span>简历管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-3"></i>
+                                    <span>招聘会</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bell mr-3"></i>
+                                    <span>消息中心</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-building mr-3"></i>
+                                    <span>企业信息</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 主内容区 -->
+                    <div class="flex-1 bg-gray-100 overflow-y-auto">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-800">职位管理</h2>
+                                <div>
+                                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                                        <i class="fas fa-plus mr-2"></i>发布职位
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- 表单 -->
+                            <div class="bg-white rounded-lg p-4 mb-6 shadow">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位名称</label>
+                                    <input type="text" placeholder="请输入职位名称" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位描述</label>
+                                    <textarea placeholder="请输入职位描述" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位要求</label>
+                                    <textarea placeholder="请输入职位要求" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">工作地点</label>
+                                    <div class="flex">
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">省份</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择省份</option>
+                                                <option>上海市</option>
+                                                <option>北京市</option>
+                                                <option>广东省</option>
+                                                <option>浙江省</option>
+                                                <option>江苏省</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">城市</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择城市</option>
+                                                <option>上海市</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">区域</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择区域</option>
+                                                <option>浦东新区</option>
+                                                <option>徐汇区</option>
+                                                <option>静安区</option>
+                                                <option>长宁区</option>
+                                                <option>黄浦区</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">详细地址</label>
+                                    <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-8">
+                                <button class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg mr-4">
+                                    保存草稿
+                                </button>
+                                <button class="bg-blue-500 text-white px-6 py-2 rounded-lg">
+                                    发布职位
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 简历管理 -->
+        <div class="desktop-container">
+            <div class="browser-header">
+                <div class="dot bg-red-500"></div>
+                <div class="dot bg-yellow-500"></div>
+                <div class="dot bg-green-500"></div>
+            </div>
+            <div class="desktop-screen">
+                <div class="flex h-full">
+                    <!-- 侧边栏 -->
+                    <div class="w-64 bg-gray-800 text-white h-full flex flex-col">
+                        <div class="p-4 border-b border-gray-700 flex items-center">
+                            <img src="https://source.unsplash.com/random/100x100/?company,logo" class="w-10 h-10 rounded mr-3">
+                            <div>
+                                <h3 class="font-bold">阿里巴巴</h3>
+                                <p class="text-xs text-gray-400">企业版</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1 overflow-y-auto">
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-tachometer-alt mr-3"></i>
+                                    <span>控制台</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-briefcase mr-3"></i>
+                                    <span>职位管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-3"></i>
+                                    <span>简历管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-3"></i>
+                                    <span>招聘会</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bell mr-3"></i>
+                                    <span>消息中心</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-building mr-3"></i>
+                                    <span>企业信息</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line mr-3"></i>
+                                    <span>数据分析</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-cog mr-3"></i>
+                                    <span>系统设置</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 border-t border-gray-700">
+                            <div class="flex items-center">
+                                <i class="fas fa-sign-out-alt mr-3"></i>
+                                <span>退出登录</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 主内容区 -->
+                    <div class="flex-1 bg-gray-100 overflow-y-auto">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-800">简历管理</h2>
+                                <div>
+                                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                                        <i class="fas fa-plus mr-2"></i>发布职位
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- 表单 -->
+                            <div class="bg-white rounded-lg p-4 mb-6 shadow">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位名称</label>
+                                    <input type="text" placeholder="请输入职位名称" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位描述</label>
+                                    <textarea placeholder="请输入职位描述" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位要求</label>
+                                    <textarea placeholder="请输入职位要求" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">工作地点</label>
+                                    <div class="flex">
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">省份</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择省份</option>
+                                                <option>上海市</option>
+                                                <option>北京市</option>
+                                                <option>广东省</option>
+                                                <option>浙江省</option>
+                                                <option>江苏省</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">城市</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择城市</option>
+                                                <option>上海市</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">区域</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择区域</option>
+                                                <option>浦东新区</option>
+                                                <option>徐汇区</option>
+                                                <option>静安区</option>
+                                                <option>长宁区</option>
+                                                <option>黄浦区</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">详细地址</label>
+                                    <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-8">
+                                <button class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg mr-4">
+                                    保存草稿
+                                </button>
+                                <button class="bg-blue-500 text-white px-6 py-2 rounded-lg">
+                                    发布职位
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 管理员-招聘会管理 -->
+        <div class="desktop-container">
+            <div class="browser-header">
+                <div class="dot bg-red-500"></div>
+                <div class="dot bg-yellow-500"></div>
+                <div class="dot bg-green-500"></div>
+            </div>
+            <div class="desktop-screen">
+                <div class="flex h-full">
+                    <!-- 侧边栏 -->
+                    <div class="w-64 bg-gray-800 text-white h-full flex flex-col">
+                        <div class="p-4 border-b border-gray-700 flex items-center">
+                            <img src="https://source.unsplash.com/random/100x100/?logo,admin" class="w-10 h-10 rounded mr-3">
+                            <div>
+                                <h3 class="font-bold">招聘系统</h3>
+                                <p class="text-xs text-gray-400">管理员</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1 overflow-y-auto">
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-tachometer-alt mr-3"></i>
+                                    <span>控制台</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-building mr-3"></i>
+                                    <span>企业管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-3"></i>
+                                    <span>用户管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gray-700">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-3"></i>
+                                    <span>招聘会管理</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bell mr-3"></i>
+                                    <span>消息通知</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line mr-3"></i>
+                                    <span>数据统计</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-cog mr-3"></i>
+                                    <span>系统设置</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 border-t border-gray-700">
+                            <div class="flex items-center">
+                                <i class="fas fa-sign-out-alt mr-3"></i>
+                                <span>退出登录</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 主内容区 -->
+                    <div class="flex-1 bg-gray-100 overflow-y-auto">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-800">招聘会管理</h2>
+                                <div>
+                                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                                        <i class="fas fa-plus mr-2"></i>发布招聘会
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- 表单 -->
+                            <div class="bg-white rounded-lg p-4 mb-6 shadow">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位名称</label>
+                                    <input type="text" placeholder="请输入职位名称" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位描述</label>
+                                    <textarea placeholder="请输入职位描述" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">职位要求</label>
+                                    <textarea placeholder="请输入职位要求" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 h-24"></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">工作地点</label>
+                                    <div class="flex">
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">省份</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择省份</option>
+                                                <option>上海市</option>
+                                                <option>北京市</option>
+                                                <option>广东省</option>
+                                                <option>浙江省</option>
+                                                <option>江苏省</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">城市</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择城市</option>
+                                                <option>上海市</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex-1">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2">区域</label>
+                                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500 appearance-none bg-white">
+                                                <option>请选择区域</option>
+                                                <option>浦东新区</option>
+                                                <option>徐汇区</option>
+                                                <option>静安区</option>
+                                                <option>长宁区</option>
+                                                <option>黄浦区</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">详细地址</label>
+                                    <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-8">
+                                <button class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg mr-4">
+                                    保存草稿
+                                </button>
+                                <button class="bg-blue-500 text-white px-6 py-2 rounded-lg">
+                                    发布职位
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
