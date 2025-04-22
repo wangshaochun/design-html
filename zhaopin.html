@@ -106,6 +106,147 @@
     <!-- 个人端 - 移动设备界面 -->
     <div class="section-title">个人用户移动端</div>
     <div class="flex flex-wrap justify-center">
+        <!-- 登录页 - 身份选择 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 登录页内容 -->
+                <div class="flex flex-col items-center justify-center h-full bg-gray-50 p-6">
+                    <img src="100x100/?logo,recruit" class="w-24 h-24 mb-6">
+                    <h2 class="text-2xl font-bold text-center mb-8">贵安人才通</h2>
+                    
+                    <p class="text-gray-600 mb-6 text-center">请选择您的身份</p>
+                    
+                    <div class="w-full space-y-4">
+                        <a href="#applicant-login" class="block bg-blue-500 text-white rounded-lg py-3 px-4 text-center font-medium shadow-md">
+                            我是应聘者
+                        </a>
+                        
+                        <a href="#company-login" class="block bg-white text-blue-500 border border-blue-500 rounded-lg py-3 px-4 text-center font-medium">
+                            我是企业
+                        </a>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mt-12 text-center">
+                        登录即表示您同意<a href="#" class="text-blue-500">《用户协议》</a>和<a href="#" class="text-blue-500">《隐私政策》</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 应聘者微信登录页 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 头部导航 -->
+                <div class="bg-white p-4 flex items-center">
+                    <a href="#" class="text-gray-600">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h2 class="text-lg font-bold mx-auto">微信登录</h2>
+                    <div class="w-5"></div>
+                </div>
+                
+                <!-- 微信登录内容 -->
+                <div class="flex flex-col items-center justify-center h-full bg-gray-50 p-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 w-full max-w-sm">
+                        <div class="flex flex-col items-center">
+                            <img src="100x100/?logo,wechat" class="w-16 h-16 mb-4">
+                            <h3 class="text-xl font-bold mb-6">微信授权登录</h3>
+                            
+                            <p class="text-gray-600 text-sm text-center mb-6">
+                                授权后将为您创建贵安人才通个人账号，并将您的微信头像、昵称等信息同步到个人资料
+                            </p>
+                            
+                            <button class="bg-green-500 text-white rounded-lg py-3 px-4 w-full text-center font-medium shadow-md mb-4 flex items-center justify-center">
+                                <i class="fab fa-weixin mr-2"></i>
+                                确认授权登录
+                            </button>
+                            
+                            <p class="text-xs text-gray-500 mt-4 text-center">
+                                如您已注册过贵安人才通账号，微信授权登录后将自动关联您的账号信息
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 企业账号密码登录页 -->
+        <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 头部导航 -->
+                <div class="bg-white p-4 flex items-center">
+                    <a href="#" class="text-gray-600">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h2 class="text-lg font-bold mx-auto">企业登录</h2>
+                    <div class="w-5"></div>
+                </div>
+                
+                <!-- 企业登录内容 -->
+                <div class="flex flex-col items-center justify-center h-full bg-gray-50 p-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 w-full max-w-sm">
+                        <div class="flex flex-col">
+                            <h3 class="text-xl font-bold mb-6 text-center">账号密码登录</h3>
+                            
+                            <form>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">手机号</label>
+                                    <input type="text" placeholder="请输入手机号" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2">密码</label>
+                                    <div class="relative">
+                                        <input type="password" placeholder="请输入密码" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                        <button type="button" class="absolute right-3 top-2.5 text-gray-400">
+                                            <i class="far fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="bg-blue-500 text-white rounded-lg py-3 px-4 w-full text-center font-medium shadow-md mb-4">
+                                    登录
+                                </button>
+                            </form>
+                            
+                            <div class="flex justify-between text-sm text-blue-500">
+                                <a href="#">忘记密码（二期）</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- 首页  -->
         <div class="phone-container">
             <div class="notch"></div>
@@ -193,20 +334,19 @@
                             </div>
                             <p class="text-orange-800 font-medium text-sm">招聘会</p>
                         </div>
-                        <!-- 人才政策 -->
-                        <div class="bg-red-50 rounded-lg p-4 flex flex-col items-center shadow-sm">
-                            <div class="bg-red-100 rounded-full p-3 mb-2">
-                                <i class="fas fa-file-alt text-red-600 text-xl"></i>
-                            </div>
-                            <p class="text-red-800  font-medium text-sm">人才、招商政策</p> 
-                        </div>
-                        
                         <!-- 培训 -->
                         <div class="bg-yellow-50 rounded-lg p-4 flex flex-col items-center shadow-sm">
                             <div class="bg-yellow-100 rounded-full p-3 mb-2">
                                 <i class="fas fa-handshake text-yellow-600 text-xl"></i>
                             </div>
                             <p class="text-yellow-800  font-medium text-sm">培训</p> 
+                        </div>
+                        <!-- 人才政策 -->
+                        <div class="bg-red-50 rounded-lg p-4 flex flex-col items-center shadow-sm">
+                            <div class="bg-red-100 rounded-full p-3 mb-2">
+                                <i class="fas fa-file-alt text-red-600 text-xl"></i>
+                            </div>
+                            <p class="text-red-800  font-medium text-sm">人才、招商政策</p> 
                         </div>
                     </div>
                 </div>
@@ -626,7 +766,118 @@
                 </div>
             </div>
         </div>
-        
+           <!-- 我的页面 -->
+           <div class="phone-container">
+            <div class="notch"></div>
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <div>
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi ml-1"></i>
+                        <i class="fas fa-battery-full ml-1"></i>
+                    </div>
+                </div>
+                
+                <!-- 个人信息 -->
+                <div class="bg-blue-500 p-4">
+                    <div class="flex items-center">
+                        <img src="100x100/?portrait" class="w-16 h-16 rounded-full border-2 border-white">
+                        <div class="ml-3 text-white">
+                            <h3 class="font-bold text-lg">张三</h3>
+                            <!-- <p class="text-sm opacity-90">前端开发工程师 · 3年经验</p> -->
+                            <div class="mt-1 bg-blue-600 px-2 py-1 rounded-full text-xs inline-block">
+                                <i class="fas fa-check-circle mr-1"></i>已认证
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 求职状态 -->
+                <!-- <div class="bg-white p-4 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-medium">当前求职状态</h4>
+                        <p class="text-blue-500 text-sm mt-1">随时到岗</p>
+                    </div>
+                    <button class="text-blue-500 border border-blue-500 px-3 py-1 rounded-full text-sm">
+                        修改
+                    </button>
+                </div> -->
+                
+                <!-- 我的简历 -->
+                <div class="bg-white mt-2 p-4">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-medium">我的简历（多个）</h4>
+                        <!-- <button class="text-blue-500 text-sm">管理</button> -->
+                    </div>
+                    <div class="flex mt-3 border rounded-lg p-3">
+                        <div class="mr-3 bg-blue-50 rounded p-2">
+                            <i class="far fa-file-alt text-blue-500 text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between">
+                                <h5 class="font-bold">个人简历.pdf</h5>
+                                <span class="text-blue-500 text-xs">预览</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">上传于 2023-07-20</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 功能列表 -->
+                <div class="bg-white mt-2">
+                    
+                    <div class="flex items-center justify-between p-4 border-b">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-history text-green-500"></i>
+                            </div>
+                            <span>投递记录</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-4 border-b">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-calendar-alt text-purple-500"></i>
+                            </div>
+                            <span>招聘会</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between p-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-cog text-orange-500"></i>
+                            </div>
+                            <span>编辑个人信息</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- 底部导航 -->
+                <div class="absolute bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-home text-xl"></i>
+                        <p class="text-xs mt-1">首页</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-briefcase text-xl"></i>
+                        <p class="text-xs mt-1">岗位</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-bell text-xl"></i>
+                        <p class="text-xs mt-1">消息</p>
+                    </div>
+                    <div class="text-center text-blue-500">
+                        <i class="fas fa-user text-xl"></i>
+                        <p class="text-xs mt-1">我的</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- 个人信息填写 -->
         <div class="phone-container">
             <div class="notch"></div>
@@ -694,19 +945,33 @@
                             <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-400"></i>
                         </div>
                     </div>
-                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">在职状态</label>
+                        <div class="flex">
+                            <div class="border rounded-lg px-4 py-2 mr-2 text-center flex-1 bg-blue-50 border-blue-500 text-blue-500">在职</div>
+                            <div class="border rounded-lg px-4 py-2 text-center flex-1 text-gray-600">离职</div> 
+                        </div>
+                    </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">手机号码</label>
                         <input type="tel" placeholder="请输入手机号码" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
                     </div>
-                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">可直接电话联系</label>
+                        <div class="flex items-center">
+                            <input type="radio" id="yes" name="contact" class="mr-2">
+                            <label for="yes" class="text-gray-700">是</label>
+                            <input type="radio" id="no" name="contact" class="ml-4 mr-2">
+                            <label for="no" class="text-gray-700">否</label>
+                        </div>
+                    </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">邮箱</label>
                         <input type="email" placeholder="请输入邮箱地址" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
                     </div>
                     
                     <div class="mb-4">
-                        <label class="block text-gray-700  mb-2">期望岗位</label>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">期望岗位</label>
                         <input type="text" placeholder="请输入期望岗位" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
                     </div>
                     
@@ -740,15 +1005,6 @@
                             <i class="fas fa-file-upload text-blue-500 text-3xl mb-2"></i>
                             <p class="text-gray-500 text-sm">点击上传简历文件</p>
                             <p class="text-gray-400 text-xs mt-1">支持PDF、Word格式，不超过2MB</p>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2">可直接电话联系</label>
-                        <div class="flex items-center">
-                            <input type="radio" id="yes" name="contact" class="mr-2">
-                            <label for="yes" class="text-gray-700">是</label>
-                            <input type="radio" id="no" name="contact" class="ml-4 mr-2">
-                            <label for="no" class="text-gray-700">否</label>
                         </div>
                     </div>
                     <div class="mb-4">
@@ -851,118 +1107,7 @@
             </div>
         </div>
         
-        <!-- 我的页面 -->
-        <div class="phone-container">
-            <div class="notch"></div>
-            <div class="phone-screen">
-                <div class="status-bar">
-                    <span>9:41</span>
-                    <div>
-                        <i class="fas fa-signal"></i>
-                        <i class="fas fa-wifi ml-1"></i>
-                        <i class="fas fa-battery-full ml-1"></i>
-                    </div>
-                </div>
-                
-                <!-- 个人信息 -->
-                <div class="bg-blue-500 p-4">
-                    <div class="flex items-center">
-                        <img src="100x100/?portrait" class="w-16 h-16 rounded-full border-2 border-white">
-                        <div class="ml-3 text-white">
-                            <h3 class="font-bold text-lg">张三</h3>
-                            <!-- <p class="text-sm opacity-90">前端开发工程师 · 3年经验</p> -->
-                            <div class="mt-1 bg-blue-600 px-2 py-1 rounded-full text-xs inline-block">
-                                <i class="fas fa-check-circle mr-1"></i>已认证
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 求职状态 -->
-                <!-- <div class="bg-white p-4 flex justify-between items-center">
-                    <div>
-                        <h4 class="font-medium">当前求职状态</h4>
-                        <p class="text-blue-500 text-sm mt-1">随时到岗</p>
-                    </div>
-                    <button class="text-blue-500 border border-blue-500 px-3 py-1 rounded-full text-sm">
-                        修改
-                    </button>
-                </div> -->
-                
-                <!-- 我的简历 -->
-                <div class="bg-white mt-2 p-4">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-medium">我的简历</h4>
-                        <button class="text-blue-500 text-sm">管理</button>
-                    </div>
-                    <div class="flex mt-3 border rounded-lg p-3">
-                        <div class="mr-3 bg-blue-50 rounded p-2">
-                            <i class="far fa-file-alt text-blue-500 text-xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex justify-between">
-                                <h5 class="font-bold">个人简历.pdf</h5>
-                                <span class="text-blue-500 text-xs">预览</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">上传于 2023-07-20</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 功能列表 -->
-                <div class="bg-white mt-2">
-                    
-                    <div class="flex items-center justify-between p-4 border-b">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
-                                <i class="fas fa-history text-green-500"></i>
-                            </div>
-                            <span>投递记录</span>
-                        </div>
-                        <i class="fas fa-chevron-right text-gray-400"></i>
-                    </div>
-                    <div class="flex items-center justify-between p-4 border-b">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
-                                <i class="fas fa-calendar-alt text-purple-500"></i>
-                            </div>
-                            <span>招聘会</span>
-                        </div>
-                        <i class="fas fa-chevron-right text-gray-400"></i>
-                    </div>
-                    <div class="flex items-center justify-between p-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
-                                <i class="fas fa-cog text-orange-500"></i>
-                            </div>
-                            <span>编辑个人信息</span>
-                        </div>
-                        <i class="fas fa-chevron-right text-gray-400"></i>
-                    </div>
-                </div>
-                
-                <!-- 底部导航 -->
-                <div class="absolute bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
-                    <div class="text-center text-gray-400">
-                        <i class="fas fa-home text-xl"></i>
-                        <p class="text-xs mt-1">首页</p>
-                    </div>
-                    <div class="text-center text-gray-400">
-                        <i class="fas fa-briefcase text-xl"></i>
-                        <p class="text-xs mt-1">岗位</p>
-                    </div>
-                    <div class="text-center text-gray-400">
-                        <i class="fas fa-bell text-xl"></i>
-                        <p class="text-xs mt-1">消息</p>
-                    </div>
-                    <div class="text-center text-blue-500">
-                        <i class="fas fa-user text-xl"></i>
-                        <p class="text-xs mt-1">我的</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
 
 
         <!-- 招聘会列表页面 -->
@@ -1081,28 +1226,41 @@
                 <div class="px-4 py-3">
                     <div class="bg-white rounded-lg p-4 mb-4">
                         <h3 class="font-medium mb-3">2024春季校园招聘会</h3>
+                        <div class="bg-white rounded-lg p-4 mb-4 flex justify-between items-center">
+                            
+                            <div>
+                                <h3 class="font-medium mb-1 text-red-600">线上直播（二期）</h3>
+                                <p class="text-sm text-gray-600">本次招聘会提供线上直播，可远程参与</p>
+                            </div>
+                            <a href=" " target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-lg flex items-center">
+                                <i class="fas fa-video mr-2"></i>
+                                进入直播
+                            </a>
+                        </div>
                         <div class="text-sm text-gray-600">
                             <p class="mb-2"><i class="far fa-calendar-alt mr-1"></i> 2024-03-15 09:00-17:00</p>
                             <p class="mb-2"><i class="fas fa-map-marker-alt mr-1"></i> 广州市天河区科技园</p>
                             <p><i class="fas fa-user-friends mr-1"></i> 已报名：286人</p>
+
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">招聘会简介</label>
-                            <textarea class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4"></textarea>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">招聘会简介</label>
+                            <div class="w-full px-3 py-2 border rounded-lg text-sm ">
+                                <p>尊敬的各位人才：</p>
+                                <p>我们诚挚地邀请您参加2024春季校园招聘会。本次招聘会将汇集多家知名企业，提供丰富的就业机会。</p>
+                                <p>时间：2024年3月15日 09:00-17:00</p>
+                                <p>地点：广州市天河区科技园</p>
+                                <p>主要参会企业：腾讯、阿里巴巴、华为等知名企业</p>
+                                <p>请携带个人简历和相关证件参加。期待与您的相遇！</p>
+                            </div>
                         </div>
                     </div>
 
                     <form class="bg-white rounded-lg p-4">
                      
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm mb-2">求职意向（改为招聘会岗位）</label>
-                            <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
-                                <option>技术开发</option>
-                                <option>产品运营</option>
-                                <option>设计</option>
-                                <option>市场营销</option>
-                                <option>其他</option>
-                            </select>
+                            <label class="block text-gray-700 text-sm mb-2">求职意向 </label>
+                            <input type="text" placeholder="请输入求职意向" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">选择简历</label>
@@ -1139,8 +1297,12 @@
                 </div>
                 <!-- 最新公告列表 -->
                 <div class="bg-blue-500 p-4 relative h-auto">
-                    <div class="text-white text-xl mb-4">动态公告</div>
-                    <div class="text-sm text-white mb-2">活动动态、新闻播报、公示公告</div>
+                    <div class="flex text-sm text-white mb-2 gap-4"> 
+                        <div class="cursor-pointer hover:text-blue-200 border-b-2 border-white">新闻</div>
+                        <div class="cursor-pointer hover:text-blue-200">活动</div>
+                        <div class="cursor-pointer hover:text-blue-200">政策</div>
+                        <div class="cursor-pointer hover:text-blue-200">公示</div>
+                    </div> 
                     
                     <!-- 公告列表 -->
                     <div class="bg-white rounded-lg p-4">
@@ -1208,22 +1370,19 @@
                             </div>
                             <p class="text-orange-800 font-medium text-sm">招聘会</p>
                         </div>
+                        <!-- 培训 -->
+                        <div class="bg-yellow-50 rounded-lg p-4 flex flex-col items-center shadow-sm">
+                            <div class="bg-yellow-100 rounded-full p-3 mb-2">
+                                <i class="fas fa-handshake text-yellow-600 text-xl"></i>
+                            </div>
+                            <p class="text-yellow-800  font-medium text-sm">培训</p> 
+                        </div>
                         <!-- 人才政策 -->
                         <div class="bg-red-50 rounded-lg p-4 flex flex-col items-center shadow-sm">
                             <div class="bg-red-100 rounded-full p-3 mb-2">
                                 <i class="fas fa-file-alt text-red-600 text-xl"></i>
                             </div>
-                            <p class="text-red-800  font-medium text-sm">人才政策</p>
-                            <p class="text-red-800  font-medium text-sm">待开放</p>
-                        </div>
-                        
-                        <!-- 招商引资 -->
-                        <div class="bg-yellow-50 rounded-lg p-4 flex flex-col items-center shadow-sm">
-                            <div class="bg-yellow-100 rounded-full p-3 mb-2">
-                                <i class="fas fa-handshake text-yellow-600 text-xl"></i>
-                            </div>
-                            <p class="text-yellow-800  font-medium text-sm">招商引资</p>
-                            <p class="text-red-800  font-medium text-sm">待开放</p>
+                            <p class="text-red-800  font-medium text-sm">人才、招商政策</p> 
                         </div>
                     </div>
                 </div>
@@ -1236,7 +1395,7 @@
                     </div>
                     <div class="text-center text-blue-500">
                         <i class="fas fa-briefcase text-xl"></i>
-                        <p class="text-xs mt-1">岗位</p>
+                        <p class="text-xs mt-1">简历</p>
                     </div>
                     <div class="text-center text-gray-400">
                         <i class="fas fa-bell text-xl"></i>
@@ -1545,7 +1704,7 @@
                     <div class="flex mb-3">
                         <div class="flex-1 bg-white rounded-lg flex items-center p-2 border">
                             <i class="fas fa-search text-gray-400 mr-2"></i>
-                            <input type="text" placeholder="搜索职位、技能或公司" class="w-full text-sm outline-none">
+                            <input type="text" placeholder="搜索职位、技能" class="w-full text-sm outline-none">
                         </div>
                         <button class="ml-2 px-3 bg-white border rounded-lg flex items-center"> 
                             <span class="text-sm ml-1">搜索</span>
@@ -1587,7 +1746,7 @@
                                 <div>
                                     <div class="flex items-center">
                                         <h4 class="font-bold">李女士</h4>
-                                        <span class="ml-2 text-xs px-1 py-0.5 bg-green-100 text-green-500 rounded">在职找工作</span>
+                                        <span class="ml-2 text-xs px-1 py-0.5 bg-green-100 text-green-500 rounded">在职</span>
                                     </div>
                                     <p class="text-gray-600 text-sm">产品经理 | 5年经验</p>
                                     <div class="text-gray-500 text-xs mt-1">硕士 | 30岁 | 北京</div>
@@ -1628,7 +1787,7 @@
                                 <div>
                                     <div class="flex items-center">
                                         <h4 class="font-bold">王先生</h4>
-                                        <span class="ml-2 text-xs px-1 py-0.5 bg-orange-100 text-orange-500 rounded">离职状态</span>
+                                        <span class="ml-2 text-xs px-1 py-0.5 bg-orange-100 text-orange-500 rounded">离职</span>
                                     </div>
                                     <p class="text-gray-600 text-sm">后端开发工程师 | 4年经验</p>
                                     <div class="text-gray-500 text-xs mt-1">本科 | 29岁 | 广州</div>
@@ -1651,7 +1810,7 @@
                                     <i class="fas fa-download mr-1"></i>简历
                                 </button>
                                 <button class="text-blue-500 text-sm py-1 px-3 border border-blue-500 rounded-full">
-                                    <i class="fas fa-phone mr-1"></i>打电话
+                                    <i class="fas fa-phone mr-1"></i>交换联系方式
                                 </button>
                             </div>
                             <button class="text-green-500 text-sm py-1 px-3 border border-green-500 rounded-full">
@@ -1667,9 +1826,13 @@
                         <i class="fas fa-home text-xl"></i>
                         <p class="text-xs mt-1">首页</p>
                     </div>
-                    <div class="text-center text-gray-400">
-                        <i class="fas fa-file-alt text-xl"></i>
+                    <div class="text-center text-blue-500">
+                        <i class="fas fa-briefcase text-xl"></i>
                         <p class="text-xs mt-1">简历</p>
+                    </div>
+                    <div class="text-center text-gray-400">
+                        <i class="fas fa-bell text-xl"></i>
+                        <p class="text-xs mt-1">消息</p>
                     </div>
                     <div class="text-center text-gray-400">
                         <i class="fas fa-building text-xl"></i>
@@ -1701,11 +1864,15 @@
                 
                 <!-- 应聘者信息 -->
                 <div class="bg-white p-4 border-b">
-                    <div class="flex items-center">
-                        <img src="100x100/?portrait,man" class="w-12 h-12 rounded-full mr-3 object-cover">
+                    <div class="flex">
+                        <img src="100x100/?portrait,woman" class="w-12 h-12 rounded-full mr-3 object-cover">
                         <div>
-                            <h4 class="font-bold">李小明</h4>
-                            <p class="text-gray-600 text-sm">前端开发工程师 · 应聘岗位：高级前端工程师</p>
+                            <div class="flex items-center">
+                                <h4 class="font-bold">李女士</h4>
+                                <span class="ml-2 text-xs px-1 py-0.5 bg-green-100 text-green-500 rounded">在职</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">产品经理 | 5年经验</p>
+                            <div class="text-gray-500 text-xs mt-1">硕士 | 30岁 | 北京</div>
                         </div>
                     </div>
                 </div>
@@ -2502,7 +2669,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 font-medium mb-2">关键技能 <span class="text-sm text-gray-500">(最多添加10项)</span></label>
+                                    <div class="flex flex-wrap items-center">
+                                        <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
+                                            <span>开发</span>
+                                            <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
+                                        </div>
+                                        <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
+                                            <span>语文教学</span>
+                                            <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
+                                        </div>
+                                        <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
+                                            <span>辅导</span>
+                                            <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
+                                        </div> 
+                                        <div class="relative mr-2 mb-2">
+                                            <input type="text" placeholder="添加技能" class="border rounded-full px-3 py-1 outline-none focus:border-blue-500 text-sm w-24">
+                                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500"><i class="fas fa-plus text-xs"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- 工作地点 -->
                                 <div class="mb-8">
                                     <h3 class="text-lg font-bold text-gray-800 mb-4 border-l-4 border-blue-500 pl-3">工作地点</h3>
@@ -2586,35 +2773,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="mb-4">
-                                        <label class="block text-gray-700 font-medium mb-2">关键技能 <span class="text-sm text-gray-500">(最多添加10项)</span></label>
-                                        <div class="flex flex-wrap items-center">
-                                            <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
-                                                <span>React</span>
-                                                <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
-                                            </div>
-                                            <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
-                                                <span>Vue</span>
-                                                <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
-                                            </div>
-                                            <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
-                                                <span>JavaScript</span>
-                                                <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
-                                            </div>
-                                            <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
-                                                <span>TypeScript</span>
-                                                <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
-                                            </div>
-                                            <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full flex items-center mr-2 mb-2">
-                                                <span>Webpack</span>
-                                                <button class="ml-1 text-xs hover:text-red-500"><i class="fas fa-times"></i></button>
-                                            </div>
-                                            <div class="relative mr-2 mb-2">
-                                                <input type="text" placeholder="添加技能" class="border rounded-full px-3 py-1 outline-none focus:border-blue-500 text-sm w-24">
-                                                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500"><i class="fas fa-plus text-xs"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                                  
                                 
@@ -2784,7 +2943,7 @@
                                             <div>
                                                 <div class="flex items-center">
                                                     <h3 class="font-bold text-lg">李小明</h3>
-                                                    <span class="ml-2 text-blue-600 bg-blue-50 px-2 py-0.5 text-xs rounded-full">匹配度98% (二期)</span>
+                                                    <span class="ml-2 text-blue-600 bg-blue-50 px-2 py-0.5 text-xs rounded-full">高匹配度 (二期)</span>
                                                     <span class="ml-2 text-green-600"><i class="fas fa-check-circle"></i> 已认证</span>
                                                 </div>
                                                 <p class="text-gray-600 mt-1">
@@ -3323,7 +3482,7 @@
                                 </div>
                                 <!--导入岗位-->
                                 <div class="mb-4">
-                                    <label class="block text-gray-700 font-medium mb-2">导入岗位（二期）</label>
+                                    <label class="block text-gray-700 font-medium mb-2">导入岗位（可以标记是否导入企业岗位）（二期）</label>
                                     <input type="file" class="border rounded-lg px-3 py-2 w-full" accept=".xlsx, .xls, .csv">
                                 </div>
 
@@ -3523,36 +3682,79 @@
                             
                             <div class="p-6">
                                 <form>
-                                    <div class="grid grid-cols-2 gap-6">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-2">企业名称 <span class="text-red-500">*</span></label>
-                                            <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-2">统一社会信用代码 <span class="text-red-500">*</span></label>
-                                            <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-2">联系人 <span class="text-red-500">*</span></label>
-                                            <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-2">联系电话 <span class="text-red-500">*</span></label>
-                                            <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
-                                        </div>
-                                        <div class="col-span-2">
-                                            <label class="block text-gray-700 font-medium mb-2">企业地址</label>
-                                            <input type="text" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
-                                        </div>
-                                        <div class="col-span-2">
-                                            <label class="block text-gray-700 font-medium mb-2">企业简介</label>
-                                            <textarea rows="4" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500"></textarea>
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">企业名称 <span class="text-red-500">*</span></label>
+                                        <input type="text" placeholder="请输入企业全称" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">统一社会信用代码 <span class="text-red-500">*</span></label>
+                                        <input type="text" placeholder="请输入18位统一社会信用代码" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">所属行业 <span class="text-red-500">*</span></label>
+                                        <select class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                            <option>请选择所属行业</option>
+                                            <option>互联网/IT/电子/通信</option>
+                                            <option>金融/银行/保险</option>
+                                            <option>教育/培训/科研</option>
+                                            <option>医疗/健康/制药</option>
+                                            <option>房地产/建筑</option>
+                                            <option>其他行业</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">企业规模 <span class="text-red-500">*</span></label>
+                                        <div class="flex flex-wrap gap-3">
+                                            <div class="flex items-center">
+                                                <input type="radio" name="scale" id="scale1" class="mr-2">
+                                                <label for="scale1">0-50人</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" name="scale" id="scale2" class="mr-2">
+                                                <label for="scale2">50-200人</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" name="scale" id="scale3" class="mr-2">
+                                                <label for="scale3">200-500人</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" name="scale" id="scale4" class="mr-2">
+                                                <label for="scale4">500-1000人</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" name="scale" id="scale5" class="mr-2">
+                                                <label for="scale5">1000人以上</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="mt-6 flex justify-end space-x-4">
-                                        <button type="button" class="px-6 py-2 border rounded-lg">取消</button>
-                                        <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-lg">保存</button>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">HR联系人 <span class="text-red-500">*</span></label>
+                                        <input type="text" placeholder="请输入HR联系人姓名" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">联系电话 <span class="text-red-500">*</span></label>
+                                        <input type="tel" placeholder="请输入联系电话" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">电子邮箱 <span class="text-red-500">*</span></label>
+                                        <input type="email" placeholder="请输入电子邮箱" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-medium mb-2">上传营业执照 <span class="text-red-500">*</span></label>
+                                        <input type="file" class="w-full border rounded-lg px-3 py-2 outline-none focus:border-blue-500">
+                                        <p class="text-xs text-gray-500 mt-1">请上传营业执照副本，确保文件格式为PDF或JPEG，大小不超过5MB</p>
+                                    </div>
+
+                                    <div class="flex justify-center mt-8">
+                                        <button type="button" class="bg-gray-200 text-gray-700 font-medium py-2 px-6 rounded-lg mr-4">取消</button>
+                                        <button type="submit" class="bg-blue-600 text-white font-medium py-2 px-6 rounded-lg">确认添加</button>
                                     </div>
                                 </form>
                             </div>
